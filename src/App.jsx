@@ -26,6 +26,7 @@ const nodeTypes = {
 };
 
 function NodeWithToolbar({ data }) {
+
   const nodeStyle = {
     height: 100,
     width: 100,
@@ -120,6 +121,7 @@ export default function App() {
                   <input
                     type="radio"
                     name="shape"
+                    //serve para mudar a forma do objeto
                     value="cubo"
                     checked={newShape === 'cubo'}
                     onChange={(e) => setNewShape(e.target.value)}
@@ -129,6 +131,7 @@ export default function App() {
                   <input
                     type="radio"
                     name="shape"
+                    //serve para mudar a forma do objeto
                     value="circulo"
                     checked={newShape === 'circulo'}
                     onChange={(e) => setNewShape(e.target.value)}
