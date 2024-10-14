@@ -16,7 +16,7 @@ const styles = {
   height: 900,
 };
 const initialNodes = [
-  { id: '1', position: { x: 0, y: 0 }, data: { label: '1', shape: 'cubo' }, type: 'node-with-toolbar', width: 100, height: 100 },
+  { id: '1', position: { x: 0, y: 0 }, data: { label: '1', shape: 'cubo' }, type: 'node-with-toolbar' },
   { id: '2', position: { x: 0, y: 100 }, data: { label: '2', shape: 'circulo' }, type: 'node-with-toolbar' }
 ];
 const initialEdges = [{ source: '1', target: '2' }];
@@ -33,6 +33,8 @@ function NodeWithToolbar({ data }) {
     border: '1px solid black',
     textAlign: 'center',
     backgroundColor: 'lightgray',
+    overflow: 'hidden',
+    boxSizing: 'border-box',
   };
   
   if (data.shape === 'circulo') {
@@ -71,14 +73,14 @@ export default function App() {
     [setEdges],
   );
 
-  const onNodeDoubleClick = (event, node) => {
+  const onDoubleClick = (event, node) => {
     setSelectedNode(node);
     setNewLabel(node.data.label);
     setNewShape(node.data.shape);
     setModalOpen(true);
   };
 
-  const handleSave = () => {
+  const salvarForma = () => {
     setNodes((nds) =>
       nds.map((node) => {
         if (node.id === selectedNode.id) {
@@ -103,7 +105,7 @@ export default function App() {
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
-          onNodeDoubleClick={onNodeDoubleClick}
+          onNodeDoubleClick={onDoubleClick}
           fitView
           nodeTypes={nodeTypes}
           preventScrolling={false}
@@ -135,12 +137,13 @@ export default function App() {
                 </label>
               </div>
 
-              <button onClick={handleSave}>Save</button>
+              <button onClick={salvarForma}>salvar</button>
               <button onClick={() => setModalOpen(false)}>Cancel</button>
             </div>
           </div>
         )}
       </ReactFlowProvider>
+
     </div>
   );
 }
