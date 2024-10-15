@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import { Handle } from '@xyflow/react';
 
-const CubeNode = ({ data }) => {
+const CuboNode = ({ data }) => {
   return (
     <div style={{ 
       width: '100px', 
       height: '100px', 
       border: '5px solid black', 
-      borderRadius: '0',  // Borda de cubo
+      borderRadius: '0',
       position: 'relative',
       backgroundColor: 'white'
     }}>
@@ -27,10 +27,10 @@ const CubeNode = ({ data }) => {
     </div>
   );
 };
-CubeNode.propTypes = {
+CuboNode.propTypes = {
   data: PropTypes.shape({
     label: PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default CubeNode;
+export default CuboNode;

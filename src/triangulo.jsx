@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import {Handle } from '@xyflow/react';
 
-const TriangleNode = ({ data }) => {
+const TrianguloNode = ({ data }) => {
   return (
     <div style={{
       width: '0',
       height: '0',
       borderLeft: '50px solid transparent',
       borderRight: '50px solid transparent',
-      borderBottom: '100px solid black',  // Triângulo
+      borderBottom: '100px solid black',
       position: 'relative'
     }}>
       <Handle 
@@ -33,10 +33,10 @@ const TriangleNode = ({ data }) => {
     </div>
   );
 };
-TriangleNode.propTypes = {
+TrianguloNode.propTypes = {
   data: PropTypes.shape({
     label: PropTypes.string.isRequired,
   }).isRequired,
 };
 
-export default TriangleNode;
+export default TrianguloNode;

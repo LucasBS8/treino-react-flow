@@ -9,8 +9,8 @@ import {
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import './App.css';
-import CubeNode from './cubo';
-import TriangleNode from './triangulo';
+import CuboNode from './cubo';
+import TrianguloNode from './triangulo';
 
 const styles = {
   background: 'blue grey',
@@ -19,8 +19,8 @@ const styles = {
 };
 
 const initialNodes = [
-  { id: '1', position: { x: 100, y: 100 }, data: { label: 'Nó 1', shape: 'cubo' }, type: 'cubeNode' },
-  { id: '2', position: { x: 300, y: 200 }, data: { label: 'Nó 2', shape: 'triângulo' }, type: 'triangleNode' },
+  { id: '1', position: { x: 100, y: 100 }, data: { label: 'Nó 1', shape: 'cubo' }, type: 'cuboNode' },
+  { id: '2', position: { x: 300, y: 200 }, data: { label: 'Nó 2', shape: 'triângulo' }, type: 'trianguloNode' },
 ];
 
 const initialEdges = [
@@ -28,8 +28,8 @@ const initialEdges = [
 ];
 
 const nodeTypes = {
-  cubeNode: CubeNode,
-  triangleNode: TriangleNode,
+  cuboNode: CuboNode,
+  trianguloNode: TrianguloNode,
 };
 
 export default function App() {
@@ -57,7 +57,7 @@ export default function App() {
         if (node.id === selectedNode.id) {
           return {
             ...node,
-            type: novaForma === 'cubo' ? 'cubeNode' : 'triangleNode',
+            type: novaForma === 'cubo' ? 'cuboNode' : 'trianguloNode',
             data: { ...node.data, shape: novaForma },
           };
         }
