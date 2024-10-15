@@ -1,5 +1,5 @@
-import React from 'react';
-import { ReactFlow, Handle } from '@xyflow/react';
+import PropTypes from 'prop-types';
+import { Handle } from '@xyflow/react';
 
 const CubeNode = ({ data }) => {
   return (
@@ -26,6 +26,11 @@ const CubeNode = ({ data }) => {
       />
     </div>
   );
+};
+CubeNode.propTypes = {
+  data: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default CubeNode;

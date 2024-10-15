@@ -1,5 +1,6 @@
-import React from 'react';
-import { ReactFlow, Handle } from '@xyflow/react';
+import PropTypes from 'prop-types';
+import {Handle } from '@xyflow/react';
+
 const TriangleNode = ({ data }) => {
   return (
     <div style={{
@@ -31,6 +32,11 @@ const TriangleNode = ({ data }) => {
       />
     </div>
   );
+};
+TriangleNode.propTypes = {
+  data: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default TriangleNode;
